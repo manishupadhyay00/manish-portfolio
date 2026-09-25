@@ -1,20 +1,34 @@
+
 import React from "react";
 import "../styles/DashboardStats.css";
 
+import { skills, skillCategories } from "./Skills";
+import { projects } from "./Projects";
+import { services } from "./Services";
+
 const DashboardStats = () => {
+  const allSkillNames = [
+    ...skills.map((skill) => skill.name),
+    ...skillCategories.flatMap((category) => category.tools),
+  ];
+
+  const totalSkills = new Set(
+    allSkillNames.map((name) => name.trim().toLowerCase())
+  ).size;
+
   const stats = [
     {
-      value: "04",
+      value: String(projects.length).padStart(2, "0"),
       label: "Featured Projects",
       detail: "Analytics & BI",
     },
     {
-      value: "14+",
+      value: String(totalSkills),
       label: "Tools & Technologies",
       detail: "Data & Engineering",
     },
     {
-      value: "04",
+      value: String(services.length).padStart(2, "0"),
       label: "Analytics Services",
       detail: "Freelance Ready",
     },
@@ -28,11 +42,10 @@ const DashboardStats = () => {
   return (
     <section className="dashboard-stats">
       <div className="dashboard-stats-container">
-
         <div className="dashboard-header">
           <div>
             <span className="dashboard-status">
-              <span className="status-dot"></span>
+              <span className="status-dot" />
               SYSTEM ONLINE
             </span>
 
@@ -44,9 +57,9 @@ const DashboardStats = () => {
 
         <div className="stats-grid">
           {stats.map((stat, index) => (
-            <div className="stat-card" key={index}>
+            <div className="stat-card" key={stat.label}>
               <span className="stat-index">
-                0{index + 1}
+                {String(index + 1).padStart(2, "0")}
               </span>
 
               <div className="stat-value">
@@ -63,7 +76,6 @@ const DashboardStats = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

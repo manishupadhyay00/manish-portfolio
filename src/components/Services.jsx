@@ -1,45 +1,46 @@
+
 import React from "react";
 import "../styles/Services.css";
 
-const Services = () => {
-  const services = [
-    {
-      number: "01",
-      title: "Power BI Dashboards",
-      description:
-        "Interactive dashboards, KPI reporting, data modeling and business-focused visualizations.",
-      tools: ["Power BI", "DAX", "Power Query"],
-    },
-    {
-      number: "02",
-      title: "Python Data Analysis",
-      description:
-        "Data cleaning, exploratory analysis, transformation and insight generation from structured datasets.",
-      tools: ["Python", "Pandas", "NumPy"],
-    },
-    {
-      number: "03",
-      title: "SQL Analytics",
-      description:
-        "Joins, aggregations, analytical queries and reporting datasets designed around business questions.",
-      tools: ["SQL", "MySQL", "PostgreSQL"],
-    },
-    {
-      number: "04",
-      title: "Excel & Data Cleaning",
-      description:
-        "Clean, organize and transform messy business data into analysis-ready reporting workflows.",
-      tools: ["Excel", "Power Query", "Data Cleaning"],
-    },
-  ];
+// Export this array so DashboardStats.jsx can
+// automatically count your services.
+export const services = [
+  {
+    title: "Power BI Dashboards",
+    description:
+      "Interactive dashboards, KPI reporting, data modeling and business-focused visualizations.",
+    tools: ["Power BI", "DAX", "Power Query"],
+  },
+  {
+    title: "Python Data Analysis",
+    description:
+      "Data cleaning, exploratory analysis, transformation and insight generation from structured datasets.",
+    tools: ["Python", "Pandas", "NumPy"],
+  },
+  {
+    title: "SQL Analytics",
+    description:
+      "Joins, aggregations, analytical queries and reporting datasets designed around business questions.",
+    tools: ["SQL", "MySQL", "PostgreSQL"],
+  },
+  {
+    title: "Excel & Data Cleaning",
+    description:
+      "Clean, organize and transform messy business data into analysis-ready reporting workflows.",
+    tools: ["Excel", "Power Query", "Data Cleaning"],
+  },
+];
 
+const Services = () => {
   return (
     <section className="services section" id="services">
       <div className="container">
 
         <div className="services-heading">
           <div>
-            <span className="section-label">06 / SERVICES</span>
+            <span className="section-label">
+              06 / SERVICES
+            </span>
 
             <h2 className="section-title">
               Data solutions
@@ -62,17 +63,22 @@ const Services = () => {
         </div>
 
         <div className="services-grid">
-
-          {services.map((service) => (
-            <article className="service-card" key={service.number}>
-
+          {services.map((service, index) => (
+            <article
+              className="service-card"
+              key={service.title}
+            >
               <div className="service-top">
-                <span>{service.number}</span>
+                <span>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <span>DATA SERVICE</span>
               </div>
 
               <div className="service-content">
-                <div className="service-icon">↗</div>
+                <div className="service-icon">
+                  ↗
+                </div>
 
                 <h3>{service.title}</h3>
 
@@ -80,7 +86,9 @@ const Services = () => {
 
                 <div className="service-tools">
                   {service.tools.map((tool) => (
-                    <span key={tool}>{tool}</span>
+                    <span key={tool}>
+                      {tool}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -89,10 +97,8 @@ const Services = () => {
                 <span>DISCUSS A PROJECT</span>
                 <span>→</span>
               </div>
-
             </article>
           ))}
-
         </div>
 
       </div>

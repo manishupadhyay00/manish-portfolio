@@ -1,0 +1,181 @@
+.services {
+  border-top: 1px solid #181818;
+}
+
+.services-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 45px;
+}
+
+.services-intro {
+  max-width: 360px;
+}
+
+.service-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.service-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.services-intro p {
+  margin-top: 14px;
+
+  color: #777;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-card {
+  min-height: 350px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid #242424;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111,
+      #080808
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #444;
+}
+
+.service-top,
+.service-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  color: #555;
+
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.service-content {
+  margin-top: 35px;
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #333;
+  border-radius: 10px;
+
+  color: #aaa;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  background: #fff;
+  color: #050505;
+}
+
+.service-content h3 {
+  margin-top: 22px;
+
+  color: #eee;
+
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.service-content p {
+  max-width: 560px;
+
+  margin-top: 12px;
+
+  color: #777;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.service-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: 20px;
+}
+
+.service-tools span {
+  padding: 5px 9px;
+
+  border: 1px solid #303030;
+  border-radius: 999px;
+
+  color: #999;
+
+  font-size: 9px;
+}
+
+.service-bottom {
+  padding-top: 18px;
+
+  border-top: 1px solid #1c1c1c;
+}
+
+@media (max-width: 800px) {
+  .services-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-card {
+    min-height: 320px;
+  }
+
+  .service-content h3 {
+    font-size: 22px;
+  }
+}

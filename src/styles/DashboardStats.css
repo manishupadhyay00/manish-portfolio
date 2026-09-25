@@ -1,0 +1,160 @@
+.dashboard-stats {
+  padding: 20px 0 90px;
+  background: #050505;
+}
+
+.dashboard-stats-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.dashboard-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.dashboard-header h2 {
+  margin-top: 10px;
+
+  color: #eee;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+.dashboard-id {
+  color: #444;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  position: relative;
+
+  min-height: 170px;
+  padding: 22px;
+
+  border: 1px solid #202020;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111,
+      #080808
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.stat-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #777,
+    transparent
+  );
+
+  opacity: 0.5;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #444;
+}
+
+.stat-index {
+  color: #444;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  margin-top: 22px;
+
+  color: #fff;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.stat-label {
+  margin-top: 12px;
+
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat-detail {
+  margin-top: 5px;
+
+  color: #555;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 850px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-header {
+    align-items: flex-start;
+  }
+
+  .dashboard-id {
+    display: none;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    min-height: 145px;
+  }
+}
